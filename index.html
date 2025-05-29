@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="title">ცურვის მაღაზია</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #e0f7fa;
+      color: #004d40;
+    }
+    header {
+      background: #007b6d;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: #025d4d;
+      padding: 0.75rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .lang-switcher {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    .lang-switcher img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1607478900764-68fe8c5d7011') center/cover no-repeat;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 1px 1px 4px black;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      background: #025d4d;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .product:hover {
+      transform: scale(1.03);
+    }
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 1rem;
+    }
+    .product-info h3,
+    .product-info p {
+      margin: 0.5rem 0;
+    }
+    .product-info button {
+      margin-top: 0.5rem;
+      background: #00796b;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .product-info button:hover {
+      background: #004d40;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #00796b;
+      color: white;
+      margin-top: 2rem;
+    }
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #00796b;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      z-index: 1000;
+    }
+    .popup.show {
+      opacity: 1;
+    }
+    .social-bar {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background: #025d4d;
+      padding: 0.5rem;
+      border-radius: 10px 0 0 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 1001;
+    }
+    .social-bar img {
+      width: 32px;
+      height: auto;
+    }
+    .contact, .about {
+      background: #ffffff;
+      padding: 2rem;
+      text-align: center;
+    }
+    .contact h2, .about h2 {
+      color: #00796b;
+    }
+  </style>
+</head>
+<body>
+  <div class="lang-switcher">
+    <img src="https://flagcdn.com/ge.svg" alt="Georgian" onclick="setLanguage('ka')" />
+    <img src="https://flagcdn.com/gb.svg" alt="English" onclick="setLanguage('en')" />
+    <img src="https://flagcdn.com/ru.svg" alt="Russian" onclick="setLanguage('ru')" />
+  </div>
+
+  <header>
+    <h1 data-i18n="title">Swim Space ონლაინ მაღაზია</h1>
+  </header>
+
+  <nav>
+    <a href="#" data-i18n="home">მთავარი</a>
+    <a href="#" data-i18n="shop">მაღაზია</a>
+    <a href="#about" data-i18n="about">ჩვენს შესახებ</a>
+    <a href="#contact" data-i18n="contact">კონტაქტი</a>
+  </nav>
+
+  <div class="hero">
+    <h2 data-i18n="hero">უმაღლესი ხარისხის ცურვის ინვენტარი</h2>
+  </div>
+
+  <section class="products">
+    <div class="product">
+      <img src="images/limasport.jpg" alt="Swim Goggles">
+      <div class="product-info">
+        <h3 data-i18n="p1title"></h3>
+        <p data-i18n="p1desc"></p>
+        <p><strong>₾ 99.00</strong></p>
+        <button data-i18n="buy">შეძენა</button>
+      </div>
+    </div>
+    <div class="product">
+      <img src="images/kalabashkanabaiji1.jpg" alt="Swim Float">
+      <div class="product-info">
+        <h3 data-i18n="p2title"></h3>
+        <p data-i18n="p2desc"></p>
+        <p><strong>₾ 43.00</strong></p>
+        <button data-i18n="buy">შეძენა</button>
+      </div>
+    </div>
+    <div class="product">
+      <img src="images/arenasuit3.jpg" alt="Swimsuit">
+      <div class="product-info">
+        <h3 data-i18n="p3title"></h3>
+        <p data-i18n="p3desc"></p>
+        <p><strong>₾ 87.00</strong></p>
+        <button data-i18n="buy">შეძენა</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2 data-i18n="about"></h2>
+    <p data-i18n="aboutText"></p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2 data-i18n="contact"></h2>
+    <p><strong data-i18n="phone">ტელეფონი:</strong> +995 598 99 29 82</p>
+    <p><strong data-i18n="email">ელ. ფოსტა:</strong> swimspace@gmail.com</p>
+    <p><strong data-i18n="location">მდებარეობა:</strong> Tbilisi (Online)</p>
+  </section>
+
+  <div class="popup" id="popup" data-i18n="popup"></div>
+
+  <div class="social-bar">
+    <a href="https://facebook.com/share/1GcxswASAu/?mibextid=wwXlfr" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+    <a href="https://instagram.com/swimspacee?igsh=bHd6OW9zY2cyM29h" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+    <a href="https://tiktok.com/@swimspace01" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
+    <a href="https://wa.me/995598992982" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+  </div>
+
+  <footer>
+    &copy; ყველა უფლება დაცულია Swim Space Development Team 2025
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        title: "Swim Space Online Store",
+        hero: "Top Quality Swim Gear",
+        p1title: "Swim Goggles (ID:01)",
+        p1desc: "Anti-fog lenses.",
+        p2title: "Training Float (20)",
+        p2desc: "Manufacturer: Nabaiji.",
+        p3title: "Swimsuit (40)",
+        p3desc: "Arena - World Aquatics.",
+        contact: "Contact",
+        phone: "Phone:",
+        email: "Email:",
+        location: "Location:",
+        popup: "Contact us at 598992982 to purchase",
+        buy: "Buy",
+        about: "About Us",
+        aboutText: "Welcome to Swim Space Store — your trusted source for high-quality swim gear. We proudly offer a handpicked selection of swim products, delivering excellence to both professional and amateur swimmers across Georgia and beyond.",
+        home: "Home",
+        shop: "Shop"
+      },
+      ru: {
+        title: "Swim Space Интернет-магазин",
+        hero: "Плавательное снаряжение высшего качества",
+        p1title: "Очки для плавания (ID:01)",
+        p1desc: "Анти-туман линзы.",
+        p2title: "Тренировочный поплавок (20)",
+        p2desc: "Производитель: Nabaiji.",
+        p3title: "Купальник (40)",
+        p3desc: "Arena - World Aquatics.",
+        contact: "Контакты",
+        phone: "Телефон:",
+        email: "Эл. почта:",
+        location: "Местоположение:",
+        popup: "Свяжитесь с нами по номеру 598992982 для покупки",
+        buy: "Купить",
+        about: "О нас",
+        aboutText: "Добро пожаловать в Swim Space Store — ваш надежный источник качественного снаряжения для плавания. Мы предлагаем тщательно отобранную продукцию для профессиональных и начинающих пловцов по всей Грузии и за её пределами.",
+        home: "Главная",
+        shop: "Магазин"
+      },
+      ka: {
+        title: "Swim Space ონლაინ მაღაზია",
+        hero: "უმაღლესი ხარისხის ცურვის ინვენტარი",
+        p1title: "ცურვის სათვალე (ID:01)",
+        p1desc: "დაორთქვლის საწინააღმდეგო.",
+        p2title: "სავარჯიშო ტივტივა(20)",
+        p2desc: "მწარმოებელი ფირმა Nabaiji.",
+        p3title: "საცურაო კოსტუმი(40)",
+        p3desc: "Arena - World Aquatics.",
+        contact: "კონტაქტი",
+        phone: "ტელეფონი:",
+        email: "ელ. ფოსტა:",
+        location: "მდებარეობა:",
+        popup: "შესაძენად მოგვწერეთ ან დაგვიკავშირდით 598992982",
+        buy: "შეძენა",
+        about: "ჩვენს შესახებ",
+        aboutText: "მოგესალმებით Swim Space Store-ში — თქვენს სანდო წყაროში მაღალი ხარისხის ცურვის ინვენტარისთვის. ჩვენ გთავაზობთ ხელით შერჩეულ პროდუქციას როგორც პროფესიონალი, ასევე მოყვარული მოცურავეებისთვის მთელი საქართველოს მასშტაბით და მის ფარგლებს გარეთ.",
+        home: "მთავარი",
+        shop: "მაღაზია"
+      }
+    };
+
+    function setLanguage(lang) {
+      const elements = document.querySelectorAll("[data-i18n]");
+      elements.forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      document.documentElement.lang = lang;
+    }
+
+    // Default language = Georgian
+    window.onload = () => setLanguage("ka");
+
+    // Popup logic
+    const popup = document.getElementById('popup');
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        popup.classList.add('show');
+        setTimeout(() => popup.classList.remove('show'), 3000);
+      });
+    });
+  </script>
+</body>
+</html>
