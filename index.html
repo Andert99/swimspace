@@ -10,11 +10,11 @@
       font-family: 'Outfit', sans-serif;
       margin: 0;
       padding: 0;
-      background: #e0f7fa;
+      background: #bff0f7;
       color: #004d40;
     }
     header {
-      background: #007b6d;
+      background: #019d8b;
       color: white;
       padding: 1rem 2rem;
       text-align: center;
@@ -23,7 +23,7 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      background: #025d4d;
+      background: #04957b;
       padding: 0.75rem;
     }
     nav a {
@@ -43,7 +43,7 @@
       height: 24px;
       cursor: pointer;
       border-radius: 50%;
-      border: 2px solid white;
+      border: 4px solid #007f68;
     }
     .hero {
       background: url('https://images.unsplash.com/photo-1607478900764-68fe8c5d7011') center/cover no-repeat;
@@ -56,7 +56,7 @@
     }
     .hero h2 {
       font-size: 2.5rem;
-      background: #025d4d;
+      background: #04957b;
       padding: 0.5rem 1rem;
       border-radius: 10px;
     }
@@ -67,7 +67,7 @@
       padding: 2rem;
     }
     .product {
-      background: white;
+      background: rgb(167, 229, 245);
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       overflow: hidden;
@@ -128,7 +128,7 @@
       top: 50%;
       right: 0;
       transform: translateY(-50%);
-      background: #025d4d;
+      background: #04957b;
       padding: 0.5rem;
       border-radius: 10px 0 0 10px;
       display: flex;
@@ -141,7 +141,7 @@
       height: auto;
     }
     .contact, .about {
-      background: #ffffff;
+      background: #bff0f7;
       padding: 2rem;
       text-align: center;
     }
@@ -258,7 +258,7 @@
       </div>
     </div>
     <div class="product">
-      <img src="images/kalabashkanabaiji1.jpg" alt="Swim Float">
+      <img src="images/kalabashkaprastoi.PNG" alt="Swim Float">
       <div class="product-info">
         <h3 data-i18n="p2title"></h3>
         <p data-i18n="p2desc"></p>
@@ -275,17 +275,63 @@
         <button data-i18n="buy">შეძენა</button>
       </div>
     </div>
+    <div class="product">
+      <img src="images/rezina5.PNG" alt="Swim Goggles">
+      <div class="product-info">
+        <h3 data-i18n="p4title"></h3>
+        <p data-i18n="p4desc"></p>
+        <p><strong>₾ 15.00</strong></p>
+        <button data-i18n="buy">შეძენა</button>
+      </div>
+    </div>
+    <div class="product">
+      <img src="images/speedofins1.PNG" alt="Swim Goggles">
+      <div class="product-info">
+        <h3 data-i18n="p5title"></h3>
+        <p data-i18n="p5desc"></p>
+        <p><strong>₾ 55.00</strong></p>
+        <button data-i18n="buy">შეძენა</button>
+      </div>
+    </div>
+    <div class="product">
+      <img src="images/vasmiorkebi.PNG" alt="Swim Goggles">
+      <div class="product-info">
+        <h3 data-i18n="p6title"></h3>
+        <p data-i18n="p6desc"></p>
+        <p><strong>₾ 72.00</strong></p>
+        <button data-i18n="buy">შეძენა</button>
+      </div>
+    </div>
+    <div class="product">
+      <img src="images/savarjishojameri.PNG" alt="Swim Goggles">
+      <div class="product-info">
+        <h3 data-i18n="p7title"></h3>
+        <p data-i18n="p7desc"></p>
+        <p><strong>₾ 63.00</strong></p>
+        <button data-i18n="buy">შეძენა</button>
+      </div>
+    </div>
+    <div class="product">
+      <img src="images/jguti2.PNG" alt="Swim Goggles">
+      <div class="product-info">
+        <h3 data-i18n="p8title"></h3>
+        <p data-i18n="p8desc"></p>
+        <p><strong>₾ 49.00</strong></p>
+        <button data-i18n="buy">შეძენა</button>
+      </div>
+    </div>
   </section>
 
   <section class="about" id="about">
     <h2 data-i18n="about"></h2>
     <p data-i18n="aboutText"></p>
+    <p style="font-size: larger;">ჩვენთი პარტნიორი კომპანიები - <b><span style="color: rgb(182, 170, 3);"> Arena , Speedo , LimaSport, Nabaiji, Mizuno</span></b></p>
   </section>
 
   <section class="contact" id="contact">
     <h2 data-i18n="contact"></h2>
     <p><strong data-i18n="phone">ტელეფონი:</strong> +995 598 99 29 82</p>
-    <p><strong data-i18n="email">ელ. ფოსტა:</strong> swimspace@gmail.com</p>
+    <p><strong data-i18n="email">ელ. ფოსტა:</strong> swimspacee@gmail.com</p>
     <p><strong data-i18n="location">მდებარეობა:</strong> Tbilisi (Online)</p>
   </section>
 
@@ -306,13 +352,23 @@
     const translations = {
       en: {
         title: "Swim Space Online Store",
-        hero: "Top Quality Swim Gear",
+        hero: "Top Quality Swim Inventory",
         p1title: "Swim Goggles (ID:01)",
         p1desc: "Anti-fog lenses.",
-        p2title: "Training Float (20)",
+        p2title: "Training Float (ID:10)",
         p2desc: "Manufacturer: Nabaiji.",
-        p3title: "Swimsuit (40)",
+        p3title: "Swimsuit (ID:20)",
         p3desc: "Arena - World Aquatics.",
+        p4title: "Exercise rubber (ID:30)",
+        p4desc: "Manufacturer: Mizuno.",
+        p5title: "Swimming Fins (ID:40)",
+        p5desc: "Manufacturer: Speedo.",
+        p6title: "Swimming eights (ID:50)",
+        p6desc: "Manufacturer: Lima.",
+        p7title: "Exercise jammer (ID:21)",
+        p7desc: "Manufacturer: Lima.",
+        p8title: "Exercise rubber (ID:41)",
+        p8desc: "Manufacturer: Lima.",
         contact: "Contact",
         phone: "Phone:",
         email: "Email:",
@@ -320,19 +376,29 @@
         popup: "Contact us at 598992982 to purchase",
         buy: "Buy",
         about: "About Us",
-        aboutText: "Welcome to Swim Space Store — your trusted source for high-quality swim gear. We proudly offer a handpicked selection of swim products, delivering excellence to both professional and amateur swimmers across Georgia and beyond.",
+        aboutText: "Welcome to Georgia’s first online store where your passion for swimming is transformed into the highest quality and innovative swimming gear! Whether you’re a professional swimmer setting records, an amateur who loves to relax in the water, or a beginner who’s ready to dive into the world of water sports, we have everything you need for an unforgettable experience. Our professional team’s selection includes cutting-edge swimwear, high-quality goggles, durable swim caps, and essential training gear designed to enhance your water experience. We pride ourselves on offering products from world-renowned brands that are guaranteed to be durable, comfortable, and stylish. Our mission is simple: to give every swimmer the confidence to perform at their best. With fast delivery, professional customer support, and customer care, we don't just sell equipment—we build a community of water enthusiasts. Dive into the aquatic world with us today.",
         home: "Home",
         shop: "Shop"
       },
       ru: {
         title: "Swim Space Интернет-магазин",
-        hero: "Плавательное снаряжение высшего качества",
+        hero: "инвентарь для плавания высшего качества",
         p1title: "Очки для плавания (ID:01)",
         p1desc: "Анти-туман линзы.",
-        p2title: "Тренировочный поплавок (20)",
+        p2title: "Тренировочный поплавок (ID:10)",
         p2desc: "Производитель: Nabaiji.",
-        p3title: "Купальник (40)",
+        p3title: "Купальник (ID:20)",
         p3desc: "Arena - World Aquatics.",
+        p4title: "Упражнительная резинка (ID:30)",
+        p4desc: "Производитель: Mizuno.",
+        p5title: "Плавательные ласты (ID:40)",
+        p5desc: "Производитель: Speedo.",
+        p6title: "Плавание восьмерками (ID:50)",
+        p6desc: "Производитель: Lima.",
+        p7title: "Упражнительная джампер (ID:21)",
+        p7desc: "Производитель: Lima.",
+        p8title: "Упражнительная резинка (ID:41)",
+        p8desc: "Производитель: Lima.",
         contact: "Контакты",
         phone: "Телефон:",
         email: "Эл. почта:",
@@ -340,7 +406,7 @@
         popup: "Свяжитесь с нами по номеру 598992982 для покупки",
         buy: "Купить",
         about: "О нас",
-        aboutText: "Добро пожаловать в Swim Space Store — ваш надежный источник качественного снаряжения для плавания. Мы предлагаем тщательно отобранную продукцию для профессиональных и начинающих пловцов по всей Грузии и за её пределами.",
+        aboutText: "Добро пожаловать в первый в Грузии интернет-магазин, где ваша страсть к плаванию воплощается в высококачественную и инновационную экипировку! Будь вы профессиональным пловцом, устанавливающим рекорды, любителем, предпочитающим расслабленный отдых в воде, или новичком, готовым окунуться в мир водных видов спорта, у нас есть всё необходимое для незабываемых впечатлений. В ассортименте нашей профессиональной команды представлены современные купальники, высококачественные очки для плавания, прочные шапочки для плавания и необходимое тренировочное снаряжение, призванное сделать ваше пребывание в воде ещё более приятным. Мы гордимся тем, что предлагаем продукцию всемирно известных брендов, которая гарантированно долговечна, удобна и стильна. Наша миссия проста: дать каждому пловцу уверенность в своих силах и наилучших результатах. Благодаря быстрой доставке, профессиональной поддержке и заботе о клиентах мы не просто продаём снаряжение — мы создаём сообщество любителей водных видов спорта. Окунитесь в мир водных видов спорта вместе с нами уже сегодня.",
         home: "Главная",
         shop: "Магазин"
       },
@@ -348,11 +414,21 @@
         title: "Swim Space ონლაინ მაღაზია",
         hero: "უმაღლესი ხარისხის ცურვის ინვენტარი",
         p1title: "ცურვის სათვალე (ID:01)",
-        p1desc: "დაორთქვლის საწინააღმდეგო.",
-        p2title: "სავარჯიშო ტივტივა(20)",
-        p2desc: "მწარმოებელი ფირმა Nabaiji.",
-        p3title: "საცურაო კოსტუმი(40)",
-        p3desc: "Arena - World Aquatics.",
+        p1desc: "მწარმოებელი ფირმა: Speedo.",
+        p2title: "სავარჯიშო ტივტივა (ID:10)",
+        p2desc: "მწარმოებელი ფირმა: Nabaiji.",
+        p3title: "საცურაო კოსტუმი (ID:20)",
+        p3desc: "მწარმოებელი ფირმა: Arena.",
+        p4title: "სავარჯიშო რეზინა (ID:30)",
+        p4desc: "მწარმოებელი ფირმა: Mizuno.",
+        p5title: "ცურვის ლასტები (ID:40)",
+        p5desc: "მწარმოებელი ფირმა: Speedo.",
+        p6title: "სავარჯიშო რვიანები (ID:50)",
+        p6desc: "მწარმოებელი ფირმა: Lima.",
+        p7title: "სავარჯიშო ჯამერი (ID:21)",
+        p7desc: "მწარმოებელი ფირმა: Lima.",
+        p8title: "სავარჯიშო რეზინა (ID:41)",
+        p8desc: "მწარმოებელი ფირმა: Lima.",
         contact: "კონტაქტი",
         phone: "ტელეფონი:",
         email: "ელ. ფოსტა:",
@@ -360,7 +436,7 @@
         popup: "შესაძენად მოგვწერეთ ან დაგვიკავშირდით 598992982",
         buy: "შეძენა",
         about: "ჩვენს შესახებ",
-        aboutText: "მოგესალმებით Swim Space Store-ში — თქვენს სანდო წყაროში მაღალი ხარისხის ცურვის ინვენტარისთვის. ჩვენ გთავაზობთ ხელით შერჩეულ პროდუქციას როგორც პროფესიონალი, ასევე მოყვარული მოცურავეებისთვის მთელი საქართველოს მასშტაბით და მის ფარგლებს გარეთ.",
+        aboutText: "მოგესალმებით საქართველოში პირველ ონლაინ მაღაზიაში, სადაც ცურვისადმი გატაცება ხდება უმაღლეს ხარისხსა და ინოვაციური საცურაო ინვენტარით! ხართ თუ არა პროფესიონალი მოცურავე, რომელიც ამყარებს რეკორდებს, მოყვარული, რომელსაც უყვარს წყალში განტვირთვა, თუ დამწყები, რომელიც მზადაა ჩაყვინთოს წყლის სპორტის სამყაროში, ჩვენ გვაქვს ყველაფერი, რაც გჭირდებათ დაუვიწყარი გამოცდილებისთვის. ჩვენი პროფესიონალი გუნდისადმი შერჩეული ასორტიმენტი მოიცავს უახლესი ტექნოლოგიების საცურაო კოსტიუმებს, მაღალი ხარისხის სათვალეებს, გამძლე საცურაო ქუდებსა და აუცილებელ სავარჯიშო ხელსაწყოებს, რომლებიც შექმნილია თქვენი წყალთან ურთიერთობის გამოცდილების გასაუმჯობესებლად. ჩვენ ვამაყობთ იმით, რომ გთავაზობთ მსოფლიოში ცნობილი ბრენდების პროდუქციას, რომელიც გარანტირებულია გამძლეობით, კომფორტითა და სტილით. ჩვენი მისია მარტივია: მივცეთ თითოეულ მოცურავეს თავდაჯერება, რომ გამოავლინოს თავისი საუკეთესო შესაძლებლობები. სწრაფი მიწოდებით, მომხმარებელთა პროფესიონალური მხარდაჭერითა და მომხმარებელზე ზრუნვით, ჩვენ არა მხოლოდ ვყიდით აღჭურვილობას — ჩვენ ვქმნით წყლის მოყვარულთა საზოგადოებას. ჩაყვინთეთ ჩვენთან ერთად წყლის სამყაროში დღესვე.",
         home: "მთავარი",
         shop: "მაღაზია"
       }
@@ -391,3 +467,15 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+  <div class="lang-switcher">
+    <img src="https://flagcdn.com/ge.svg" alt="Georgian" onclick="setLanguage('ka')" />
+    <img src="https://flagcdn.com/gb.svg" alt="English" onclick="setLanguage('en')" />
+    <img src="https://flagcdn.com/ru.svg" alt="Russian" onclick="setLanguage('ru')" />
+  </div>
