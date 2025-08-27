@@ -277,7 +277,27 @@
         closeModal();
       }
     });
+    const socialBar = document.querySelector('.social-bar');
+        // Handle both click and touchstart for mobile compatibility
+        ['click', 'touchstart'].forEach(event => {
+            socialBar.addEventListener(event, (e) => {
+                e.preventDefault(); // Prevent default touch behavior
+                socialBar.classList.toggle('active');
+            });
+        });
+        // Hide bar when tapping/clicking outside
+        document.addEventListener('touchstart', (e) => {
+            if (!socialBar.contains(e.target)) {
+                socialBar.classList.remove('active');
+            }
+        });
+        document.addEventListener('click', (e) => {
+            if (!socialBar.contains(e.target)) {
+                socialBar.classList.remove('active');
+            }
+        });
   </script>
 </body>
 </html>
+
 
