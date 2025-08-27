@@ -132,7 +132,7 @@
 .social-bar {
             position: fixed;
             top: 50%;
-            right: -37px; /* Adjusted to show more of the bar for tapping */
+            right: -38px; /* Adjusted to show more of the bar for tapping */
             transform: translateY(-50%);
             background: #04957b;
             padding: 0.5rem;
@@ -286,5 +286,6 @@
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
+
 
 
