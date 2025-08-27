@@ -130,31 +130,46 @@
       opacity: 1;
     }
 .social-bar {
-    position: fixed;
-    top: 50%;
-    right: -40px; /* Partially visible to act as a handle */
-    transform: translateY(-50%);
-    background: #04957b;
-    padding: 0.5rem;
-    border-radius: 10px 0 0 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    z-index: 1001;
-    transition: right 0.3s ease-in-out; /* Smooth slide animation */
-}
+            position: fixed;
+            top: 50%;
+            right: -40px; /* Adjusted to show more of the bar for tapping */
+            transform: translateY(-50%);
+            background: #04957b;
+            padding: 0.5rem;
+            border-radius: 10px 0 0 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 1001;
+            transition: right 0.3s ease-in-out; /* Smooth slide animation */
+            touch-action: manipulation; /* Improve touch responsiveness */
+        }
 
-/* Hover and touch trigger for desktop and mobile */
-.social-bar:hover,
-.social-bar:active,
-.social-bar:focus {
-    right: 0; /* Slide in fully when interacted with */
-}
+        /* Hover for desktop */
+        .social-bar:hover {
+            right: 0; /* Slide in on hover */
+        }
 
-.social-bar img {
-    width: 32px;
-    height: auto;
-}
+        /* Active state for touch/click */
+        .social-bar.active {
+            right: 0; /* Slide in when toggled */
+        }
+
+        .social-bar img {
+            width: 32px;
+            height: auto;
+        }
+
+        /* Optional: Add a visible handle for better tap target */
+        .social-bar::before {
+            content: '';
+            position: absolute;
+            left: -10px; /* Small tappable area outside the bar */
+            width: 15px;
+            height: 100%;
+            background: transparent;
+            z-index: 1002;
+        }
     .contact, .about {
       background: #bff0f7;
       padding: 2rem;
