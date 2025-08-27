@@ -4,252 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n="title">ცურვის მაღაზია</title>
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Outfit', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #bff0f7;
-      color: #004d40;
-    }
-    header {
-      background: #019d8b;
-      color: white;
-      padding: 1rem 2rem;
-      text-align: center;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background: #04957b;
-      padding: 0.75rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .lang-switcher {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      display: flex;
-      gap: 10px;
-    }
-    .lang-switcher img {
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-      border-radius: 50%;
-      border: 4px solid #007f68;
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1607478900764-68fe8c5d7011') center/cover no-repeat;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 1px 1px 4px black;
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      background: #04957b;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-    .product {
-      background: rgb(167, 229, 245);
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-    .product:hover {
-      transform: scale(1.03);
-    }
-    .product img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      cursor: pointer;
-    }
-    .product-info {
-      padding: 1rem;
-    }
-    .product-info h3,
-    .product-info p {
-      margin: 0.5rem 0;
-    }
-    .product-info button {
-      margin-top: 0.5rem;
-      background: #00796b;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .product-info button:hover {
-      background: #004d40;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #00796b;
-      color: white;
-      margin-top: 2rem;
-    }
-    .popup {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #00796b;
-      color: white;
-      padding: 1rem 1.5rem;
-      border-radius: 10px;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-      z-index: 1000;
-    }
-    .popup.show {
-      opacity: 1;
-    }
-    .social-bar {
-      position: fixed;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      background: #04957b;
-      padding: 0.5rem;
-      border-radius: 10px 0 0 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      z-index: 1001;
-    }
-    .social-bar img {
-      width: 32px;
-      height: auto;
-    }
-    .contact, .about {
-      background: #bff0f7;
-      padding: 2rem;
-      text-align: center;
-    }
-    .contact h2, .about h2 {
-      color: #00796b;
-    }
-    /* Image Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1002;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      color: white;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    /* Responsive adjustments */
-    @media (max-width: 575.98px) {
-      .modal-content {
-        max-width: 95%;
-      }
-    }
-    @media (min-width: 576px) and (max-width: 767.98px) {
-      .modal-content {
-        max-width: 90%;
-      }
-    }
-    @media (min-width: 768px) and (max-width: 991.98px) {
-      .modal-content {
-        max-width: 80%;
-      }
-    }
-    @media (max-width: 375px) {
-      .modal-content {
-        max-width: 95%;
-      }
-    }
-    @media (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-      .modal-content {
-        max-width: 95%;
-      }
-    }
-    @media (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
-      .modal-content {
-        max-width: 90%;
-      }
-    }
-    @media (max-width: 1080px) {
-      .modal-content {
-        max-width: 85%;
-      }
-    }
-    @media only screen 
-      and (device-width: 393px) 
-      and (device-height: 852px) 
-      and (-webkit-device-pixel-ratio: 3) {
-      .modal-content {
-        max-width: 95%;
-      }
-    }
-    #loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 9999;
-    }
-    #loaderText {
-      font-size: 18px;
-      color: #333;
-      margin-top: 10px;
-    }
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 4px solid #ccc;
-      border-top: 4px solid #007BFF;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-  </style>
 </head>
 <body>
   <div class="lang-switcher">
@@ -257,7 +13,9 @@
     <img src="https://flagcdn.com/gb.svg" alt="English" onclick="setLanguage('en')" />
     <img src="https://flagcdn.com/ru.svg" alt="Russian" onclick="setLanguage('ru')" />
   </div>
-
+<div class="demotext">
+   <b><p style="color: #f18d8d;" data-i18n="betatext"></p></b>
+</div>
   <header>
     <h1 data-i18n="title">Swim Space ონლაინ მაღაზია</h1>
   </header>
@@ -341,7 +99,7 @@
       <img src="images/jguti2.PNG" alt="Swim Goggles" onclick="openModal(this.src)">
       <div class="product-info">
         <h3 data-i18n="p8title"></h3>
-        <p data-i18n "p8desc"></p>
+        <p data-i18n = "p8desc"></p>
         <p><strong>₾ 49.00</strong></p>
         <button data-i18n="buy">შეძენა</button>
       </div>
@@ -351,7 +109,7 @@
   <section class="about" id="about">
     <h2 data-i18n="about"></h2>
     <p data-i18n="aboutText"></p>
-    <p style="font-size: larger;">ჩვენთი პარტნიორი კომპანიები - <b><span style="color: rgb(182, 170, 3);"> Arena , Speedo , LimaSport, Nabaiji, Mizuno</span></b></p>
+    <p style="font-size: larger;">ჩვენ ვთანამშრომლობთ მხოლოდ საუკეთესო კომპანიებთან - <b><span style="color: rgb(182, 170, 3);"> Arena , Speedo , LimaSport, Nabaiji, Mizuno</span></b></p>
   </section>
 
   <section class="contact" id="contact">
@@ -410,7 +168,8 @@
         about: "About Us",
         aboutText: "Welcome to Georgia’s first online store where your passion for swimming is transformed into the highest quality and innovative swimming gear! Whether you’re a professional swimmer setting records, an amateur who loves to relax in the water, or a beginner who’s ready to dive into the world of water sports, we have everything you need for an unforgettable experience. Our professional team’s selection includes cutting-edge swimwear, high-quality goggles, durable swim caps, and essential training gear designed to enhance your water experience. We pride ourselves on offering products from world-renowned brands that are guaranteed to be durable, comfortable, and stylish. Our mission is simple: to give every swimmer the confidence to perform at their best. With fast delivery, professional customer support, and customer care, we don't just sell equipment—we build a community of water enthusiasts. Dive into the aquatic world with us today.",
         home: "Home",
-        shop: "Shop"
+        shop: "Shop",
+        betatext: "The site is in test mode. Technical work is underway.."
       },
       ru: {
         title: "Swim Space Интернет-магазин",
@@ -440,7 +199,8 @@
         about: "О нас",
         aboutText: "Добро пожаловать в первый в Грузии интернет-магазин, где ваша страсть к плаванию воплощается в высококачественную и инновационную экипировку! Будь вы профессиональным пловцом, устанавливающим рекорды, любителем, предпочитающим расслабленный отдых в воде, или новичком, готовым окунуться в мир водных видов спорта, у нас есть всё необходимое для незабываемых впечатлений. В ассортименте нашей профессиональной команды представлены современные купальники, высококачественные очки для плавания, прочные шапочки для плавания и необходимое тренировочное снаряжение, призванное сделать ваше пребывание в воде ещё более приятным. Мы гордимся тем, что предлагаем продукцию всемирно известных брендов, которая гарантированно долговечна, удобна и стильна. Наша миссия проста: дать каждому пловцу уверенность в своих силах и наилучших результатах. Благодаря быстрой доставке, профессиональной поддержке и заботе о клиентах мы не просто продаём снаряжение — мы создаём сообщество любителей водных видов спорта. Окунитесь в мир водных видов спорта вместе с нами уже сегодня.",
         home: "Главная",
-        shop: "Магазин"
+        shop: "Магазин",
+        betatext: "Сайт находится в тестовом режиме. Ведутся технические работы.."
       },
       ka: {
         title: "Swim Space ონლაინ მაღაზია",
@@ -470,7 +230,8 @@
         about: "ჩვენს შესახებ",
         aboutText: "მოგესალmებით საქართველოში პირველ ონლაინ მაღაზიაში, სადაც ცურვისადმი გატაცება ხდება უმაღლეს ხარისხსა და ინოვაციური საცურაო ინვენტარით! ხართ თუ არა პროფესიონალი მოცურავე, რომელიც ამყარებს რეკორდებს, მოყვარული, რომელსაც უყვარს წყალში განტვირთვა, თუ დამწყები, რომელიც მზადაა ჩაყვინთოს წყლის სპორტის სამყაროში, ჩვენ გვაქვს ყველაფერი, რაც გჭირდებათ დაუვიწყარი გამოცდილებისთვის. ჩვენი პროფესიონალი გუნდისადმი შერჩეული ასორტიმენტი მოიცავს უახლესი ტექნოლოგიების საცურაო კოსტიუმებს, მაღალი ხარისხის სათვალეებს, გამძლე საცურაო ქუდებსა და აუცილებელ სავარჯიშო ხელსაწყოებს, რომლებიც შექმნილია თქვენი წყალთან ურთიერთობის გამოცდილების გასაუმჯობესებლად. ჩვენ ვამაყობთ იმით, რომ გთავაზობთ მსოფლიოში ცნობილი ბრენდების პროდუქციას, რომელიც გარანტირებულია გამძლეობით, კომფორტითა და სტილით. ჩვენი მისია მარტივია: მივცეთ თითოეულ მოცურავეს თავდაჯერება, რომ გამოავლინოს თავისი საუკეთესო შესაძლებლობები. სწრაფი მიწოდებით, მომხმარებელთა პროფესიონალური მხარდაჭერითა და მომხმარებელზე ზრუნვით, ჩვენ არა მხოლოდ ვყიდით აღჭურვილობას — ჩვენ ვქმნით წყლის მოყვარულთა საზოგადოებას. ჩაყვინთეთ ჩვენთან ერთად წყლის სამყაროში დღესვე.",
         home: "მთავარი",
-        shop: "მაღაზია"
+        shop: "მაღაზია",
+        betatext: "საიტი მუშაობს სატესტო რეჟიმში. მიმდინარეობს ტექნიკური სამუშაოები.."
       }
     };
 
@@ -519,4 +280,3 @@
   </script>
 </body>
 </html>
-
